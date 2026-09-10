@@ -10,33 +10,73 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as MoviesRouteImport } from './routes/movies'
+import { Route as MyListRouteImport } from './routes/my-list'
+import { Route as NewPopularRouteImport } from './routes/new-popular'
+import { Route as TvShowsRouteImport } from './routes/tv-shows'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MoviesRoute = MoviesRouteImport.update({
+  id: '/movies',
+  path: '/movies',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MyListRoute = MyListRouteImport.update({
+  id: '/my-list',
+  path: '/my-list',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NewPopularRoute = NewPopularRouteImport.update({
+  id: '/new-popular',
+  path: '/new-popular',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TvShowsRoute = TvShowsRouteImport.update({
+  id: '/tv-shows',
+  path: '/tv-shows',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/movies': typeof MoviesRoute
+  '/my-list': typeof MyListRoute
+  '/new-popular': typeof NewPopularRoute
+  '/tv-shows': typeof TvShowsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/movies': typeof MoviesRoute
+  '/my-list': typeof MyListRoute
+  '/new-popular': typeof NewPopularRoute
+  '/tv-shows': typeof TvShowsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/movies': typeof MoviesRoute
+  '/my-list': typeof MyListRoute
+  '/new-popular': typeof NewPopularRoute
+  '/tv-shows': typeof TvShowsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/movies' | '/my-list' | '/new-popular' | '/tv-shows'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/movies' | '/my-list' | '/new-popular' | '/tv-shows'
+  id: '__root__' | '/' | '/movies' | '/my-list' | '/new-popular' | '/tv-shows'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  MoviesRoute: typeof MoviesRoute
+  MyListRoute: typeof MyListRoute
+  NewPopularRoute: typeof NewPopularRoute
+  TvShowsRoute: typeof TvShowsRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +88,43 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/movies': {
+      id: '/movies'
+      path: '/movies'
+      fullPath: '/movies'
+      preLoaderRoute: typeof MoviesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/my-list': {
+      id: '/my-list'
+      path: '/my-list'
+      fullPath: '/my-list'
+      preLoaderRoute: typeof MyListRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/new-popular': {
+      id: '/new-popular'
+      path: '/new-popular'
+      fullPath: '/new-popular'
+      preLoaderRoute: typeof NewPopularRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tv-shows': {
+      id: '/tv-shows'
+      path: '/tv-shows'
+      fullPath: '/tv-shows'
+      preLoaderRoute: typeof TvShowsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  MoviesRoute: MoviesRoute,
+  MyListRoute: MyListRoute,
+  NewPopularRoute: NewPopularRoute,
+  TvShowsRoute: TvShowsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
