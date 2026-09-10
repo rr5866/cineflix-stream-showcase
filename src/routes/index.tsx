@@ -28,7 +28,9 @@ const gradients = [
   "poster-indigo",
   "poster-crimson",
   "poster-cyan",
-];
+] as const;
+
+const posterGradient = (index: number) => gradients[index % gradients.length];
 
 const trendingMovies = [
   { id: "t1", title: "Neon Horizon", year: 2026, rating: "16+", duration: "2h 14m", gradient: gradients[0] },
