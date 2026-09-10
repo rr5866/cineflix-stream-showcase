@@ -50,7 +50,7 @@ export function Hero() {
       <button
         type="button"
         onClick={() => setMuted((m) => !m)}
-        className="absolute right-4 bottom-24 rounded-full border border-foreground/40 p-2 text-foreground transition-colors hover:bg-white/10 md:right-8 lg:right-12"
+        className="absolute right-4 bottom-24 rounded-full border border-foreground/40 p-2 text-foreground transition-colors hover:bg-foreground/10 md:right-8 lg:right-12"
         aria-label={muted ? "Unmute" : "Mute"}
       >
         {muted ? <VolumeX className="h-5 w-5" /> : <Volume2 className="h-5 w-5" />}
