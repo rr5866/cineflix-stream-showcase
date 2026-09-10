@@ -48,11 +48,11 @@ export function MovieRow({ title, movies }: MovieRowProps) {
           {movies.map((movie, index) => (
             <div
               key={movie.id}
-              className="card-zoom relative aspect-[2/3] w-32 flex-shrink-0 cursor-pointer snap-start overflow-hidden rounded-md bg-card sm:w-40 md:w-48 lg:w-56"
+              className="group/card card-zoom relative aspect-[2/3] w-32 flex-shrink-0 cursor-pointer snap-start overflow-hidden rounded-md bg-card sm:w-40 md:w-48 lg:w-56"
               style={{ animationDelay: `${index * 40}ms` }}
             >
               <div className={`absolute inset-0 ${movie.gradient}`} />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-3">
                 <span className="absolute left-2 top-[-2.5rem] text-5xl font-bold leading-none text-foreground/20" style={{ fontFamily: "var(--font-display)" }}>
                   {index + 1}
@@ -66,7 +66,7 @@ export function MovieRow({ title, movies }: MovieRowProps) {
                   <span>{movie.duration}</span>
                 </div>
               </div>
-              <div className="absolute right-2 top-2 rounded-full bg-black/50 p-1.5 text-foreground opacity-0 transition-opacity hover:bg-black/80 group-hover/card:opacity-100">
+              <div className="absolute right-2 top-2 rounded-full bg-background/60 p-1.5 text-foreground opacity-0 transition-opacity hover:bg-background group-hover/card:opacity-100">
                 <Info className="h-3.5 w-3.5" />
               </div>
             </div>
