@@ -52,19 +52,21 @@ export function MovieRow({ title, movies }: MovieRowProps) {
               style={{ animationDelay: `${index * 40}ms` }}
             >
               <div className={`absolute inset-0 ${movie.gradient}`} />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-3">
-                <span className="absolute left-2 top-[-2.5rem] text-5xl font-bold leading-none text-foreground/20" style={{ fontFamily: "var(--font-display)" }}>
-                  {index + 1}
-                </span>
-                <h3 className="text-sm font-semibold text-foreground line-clamp-2" style={{ fontFamily: "var(--font-display)" }}>
+              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
+              <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-center opacity-80 transition-opacity group-hover/card:opacity-100">
+                <h3 className="text-xl font-bold text-foreground drop-shadow-md md:text-2xl" style={{ fontFamily: "var(--font-display)" }}>
                   {movie.title}
                 </h3>
-                <div className="mt-1 flex items-center gap-2 text-[10px] text-foreground/70">
+              </div>
+              <div className="absolute bottom-0 left-0 right-0 flex items-end justify-between p-3">
+                <div className="flex items-center gap-2 text-[10px] text-foreground/80">
                   <span className="rounded border border-foreground/40 px-1">{movie.rating}</span>
                   <span>{movie.year}</span>
                   <span>{movie.duration}</span>
                 </div>
+                <span className="text-4xl font-bold leading-none text-foreground/15" style={{ fontFamily: "var(--font-display)" }}>
+                  {index + 1}
+                </span>
               </div>
               <div className="absolute right-2 top-2 rounded-full bg-background/60 p-1.5 text-foreground opacity-0 transition-opacity hover:bg-background group-hover/card:opacity-100">
                 <Info className="h-3.5 w-3.5" />
