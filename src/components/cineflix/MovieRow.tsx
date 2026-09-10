@@ -76,7 +76,7 @@ export function MovieRow({ title, movies }: MovieRowProps) {
         <button
           type="button"
           onClick={() => scroll("right")}
-          className="absolute -right-4 top-0 z-20 hidden h-full w-12 items-center justify-center bg-black/60 text-foreground opacity-0 transition-opacity hover:bg-black/80 group-hover:opacity-100 md:-right-8 md:flex"
+          className="absolute -right-4 top-0 z-20 hidden h-full w-12 items-center justify-center bg-background/80 text-foreground opacity-0 transition-opacity hover:bg-background group-hover:opacity-100 md:-right-8 md:flex"
           aria-label="Scroll right"
         >
           <ChevronRight className="h-8 w-8" />
