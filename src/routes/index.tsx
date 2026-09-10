@@ -31,7 +31,7 @@ const gradients = [
 ] as const;
 
 const posterGradient = (index: number): string =>
-  gradients[index % gradients.length];
+  gradients[index % gradients.length] ?? "poster-red";
 
 const trendingMovies = [
   { id: "t1", title: "Neon Horizon", year: 2026, rating: "16+", duration: "2h 14m", gradient: posterGradient(0) },
