@@ -22,12 +22,12 @@ export const Route = createFileRoute("/")({
 });
 
 const gradients = [
-  "bg-gradient-to-br from-rose-900 to-slate-900",
-  "bg-gradient-to-br from-amber-700 to-stone-900",
-  "bg-gradient-to-br from-emerald-800 to-teal-950",
-  "bg-gradient-to-br from-indigo-900 to-slate-950",
-  "bg-gradient-to-br from-red-800 to-neutral-900",
-  "bg-gradient-to-br from-cyan-800 to-blue-950",
+  "poster-red",
+  "poster-amber",
+  "poster-emerald",
+  "poster-indigo",
+  "poster-crimson",
+  "poster-cyan",
 ];
 
 const trendingMovies = [
