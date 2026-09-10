@@ -138,3 +138,28 @@
 @utility text-shadow-hero {
   text-shadow: 0 2px 8px oklch(0 0 0 / 0.6);
 }
+
+@utility poster-red {
+  background: linear-gradient(135deg, oklch(0.45 0.18 25), oklch(0.2 0 0));
+}
+
+@utility poster-amber {
+  background: linear-gradient(135deg, oklch(0.55 0.13 65), oklch(0.2 0 0));
+}
+
+@utility poster-emerald {
+  background: linear-gradient(135deg, oklch(0.45 0.12 155), oklch(0.18 0 0));
+}
+
+@utility poster-indigo {
+  background: linear-gradient(135deg, oklch(0.4 0.16 270), oklch(0.18 0 0));
+}
+
+@utility poster-crimson {
+  background: linear-gradient(135deg, oklch(0.5 0.2 20), oklch(0.2 0 0));
+}
+
+@utility poster-cyan {
+  background: linear-gradient(135deg, oklch(0.5 0.14 210), oklch(0.18 0 0));
+}
+
